@@ -55,8 +55,8 @@
         text-align: center;
       }
       .border-x {
-        border-left: 1px solid #fff;
-        border-right: 1px solid #fff;
+        /* border-left: 1px solid #fff;
+        border-right: 1px solid #fff; */
       }
       .location-text {
         font-size: 14px;
@@ -69,14 +69,28 @@
         padding: 20px;
       }
       .paragraph {
-        font-size: 16px;
+        font-size: 24px;
         color: #333333;
-        margin: 10px 0;
+        margin: 20px 0;
         color: #003087;
       }
       .speaker-img {
+        width: 150px;
+        height: 150px;
         border-radius: 50%;
-        max-width: 150px;
+        object-fit: cover;
+        display: block;
+      }
+
+      .speaker-img-wrapper {
+        display: inline-block;
+        padding: 3px;
+        background: linear-gradient(180deg, #fc466b 0%, #3f5efb 100%);
+        border-radius: 50%;
+        width: 156px;
+        height: 156px;
+        box-sizing: border-box;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
       }
       .speaker-info {
         font-size: 16px;
@@ -170,7 +184,7 @@
       }
       .footer {
         padding: 20px;
-        font-size: 13px;
+        font-size: 14px;
         color: #333;
         font-family: Arial, sans-serif;
         line-height: 1.6;
@@ -202,12 +216,24 @@
         font-size: 20px;
         font-weight: bold;
         border-radius: 20px 20px 0px 0px;
-        /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); */
         text-align: center;
         position: relative;
         text-transform: uppercase;
         margin: 0px auto;
         margin-bottom: 20px;
+      }
+      .gold-box {
+        background: linear-gradient(to bottom right, #f6c244, #b8860b);
+        color: white;
+        font-size: 48px;
+        font-weight: bold;
+        text-align: center;
+        width: 100px;
+        height: 100px;
+        line-height: 100px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        border-radius: 4px;
+        margin: 0 auto;
       }
     </style>
   </head>
@@ -264,7 +290,7 @@
                   width="550"
                   cellpadding="0"
                   cellspacing="0"
-                  style="margin: 0 auto; padding: 20px 0"
+                  style="margin: 0 0 0 auto; padding: 20px 0"
                 >
                   <tr>
                     <td>
@@ -304,63 +330,92 @@
                   width="100%"
                   height="200"
                   class="img-block"
-                  style="margin-bottom: 40px"
+                  style="margin-bottom: 30px"
                 />
 
-                <table
-                  width="70%"
-                  align="center"
-                  cellpadding="0"
-                  cellspacing="0"
-                  class="time-block"
-                  style="table-layout: fixed; margin-bottom: 40px"
-                >
+                <table>
                   <tr>
-                    <td class="time-cell" style="width: 35%">
-                      <p>14:00 - 16:00</p>
-                      <p
-                        style="border-bottom: 1px solid #fff; margin: 10px 0"
-                      ></p>
-                      <p>Thứ 6</p>
-                    </td>
-                    <td class="time-cell border-x" style="width: 30%">
-                      <p style="font-size: 48px">25</p>
-                    </td>
-                    <td class="time-cell" style="width: 35%">
-                      <p>THÁNG 4</p>
-                      <p
-                        style="border-bottom: 1px solid #fff; margin: 10px 0"
-                      ></p>
-                      <p>2025</p>
-                    </td>
-                  </tr>
-                </table>
+                    <td width="50%">
+                      <table
+                        width="100%"
+                        align="center"
+                        cellpadding="0"
+                        cellspacing="0"
+                        class="time-block"
+                        style="table-layout: fixed"
+                      >
+                        <tr>
+                          <td class="time-cell" style="width: 10%">
+                            <img
+                              src="./asset//locationIcon.png"
+                              alt="Location Icon"
+                              width="50"
+                              height="50"
+                            />
+                          </td>
 
-                <table
-                  width="630px"
-                  align="center"
-                  cellpadding="0"
-                  cellspacing="0"
-                  class="time-block"
-                  style="table-layout: fixed"
-                >
-                  <tr>
-                    <td class="time-cell" style="width: 5%">
-                      <img
-                        src="./asset//locationIcon.png"
-                        alt="Location Icon"
-                        width="50"
-                        height="50"
-                      />
+                          <td style="width: 80%">
+                            <p
+                              class="location-text"
+                              style="padding-bottom: 10px"
+                            >
+                              Hội trường Bệnh viện Đa khoa Tỉnh Gia Lai
+                            </p>
+                            <p class="location-text">
+                              132 Tôn Thất Tùng, Phường Đông, Pleiku, Gia Lai
+                            </p>
+                          </td>
+                        </tr>
+                      </table>
                     </td>
 
-                    <td style="width: 95%">
-                      <p class="location-text" style="padding-bottom: 10px">
-                        Hội trường Bệnh viện Đa khoa Tỉnh Gia Lai
-                      </p>
-                      <p class="location-text">
-                        132 Tôn Thất Tùng, Phường Đông, Pleiku, Gia Lai
-                      </p>
+                    <td width="5%" />
+
+                    <td width="40%">
+                      <table
+                        width="100%"
+                        align="center"
+                        cellpadding="0"
+                        cellspacing="0"
+                        class="time-block"
+                        style="table-layout: fixed; margin-bottom: 40px"
+                      >
+                        <tr>
+                          <td class="time-cell" style="width: 35%">
+                            <p>14:00 - 16:00</p>
+                            <p
+                              style="
+                                height: 2px;
+                                background: linear-gradient(
+                                  -90deg,
+                                  #fc466b 0%,
+                                  #a3b2f9 100%
+                                );
+                                margin: 10px 0;
+                              "
+                            ></p>
+                            <p>Thứ 6</p>
+                          </td>
+                          <td class="time-cell border-x" style="width: 30%">
+                            <div class="gold-box">25</div>
+                          </td>
+                          <td class="time-cell" style="width: 35%">
+                            <p>THÁNG 4</p>
+                            <p
+                              style="
+                                height: 2px;
+                                background: linear-gradient(
+                                  90deg,
+                                  #fc466b 0%,
+                                  #a3b2f9 100%
+                                );
+                                margin: 10px 0;
+                              "
+                            ></p>
+                            <p>2025</p>
+                          </td>
+                        </tr>
+                      </table>
                     </td>
                   </tr>
                 </table>
@@ -398,10 +453,10 @@
                             #003087
                           );
                           color: #ffffff;
-                          padding: 14px 32px;
+                          padding: 24px 100px;
                           border-radius: 40px;
                           font-weight: bold;
-                          font-size: 16px;
+                          font-size: 24px;
                           text-decoration: none;
                           text-transform: uppercase;
                           box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
@@ -416,7 +471,7 @@
                       <img
                         src="https://i.imgur.com/0y0JfMm.png"
                         alt="QR Code"
-                        style="max-width: 200px"
+                        style="max-width: 300px"
                       />
                     </td>
                   </tr>
@@ -438,22 +493,26 @@
                 <table width="800px" style="margin: 30px auto">
                   <tr>
                     <td width="50%" class="center" style="padding-bottom: 20px">
-                      <img
-                        src="./asset/NguyenDangBao.jpg"
-                        alt="Speaker 1"
-                        class="speaker-img"
-                      />
+                      <div class="speaker-img-wrapper">
+                        <img
+                          src="./asset/NguyenDangBao.jpg"
+                          alt="Speaker 1"
+                          class="speaker-img"
+                        />
+                      </div>
                       <p class="speaker-info" style="font-weight: 600">
                         CHỦ TỌA
                       </p>
                       <p class="speaker-info">TS. BS. NGUYỄN ĐĂNG BẢO</p>
                     </td>
                     <td width="50%" class="center" style="padding-bottom: 20px">
-                      <img
-                        src="./asset/LyVanChieu.jpg"
-                        alt="Speaker 2"
-                        class="speaker-img"
-                      />
+                      <div class="speaker-img-wrapper">
+                        <img
+                          src="./asset/LyVanChieu.jpg"
+                          alt="Speaker 2"
+                          class="speaker-img"
+                        />
+                      </div>
                       <p class="speaker-info" style="font-weight: 600">
                         CHỦ TỌA
                       </p>
@@ -462,22 +521,26 @@
                   </tr>
                   <tr>
                     <td width="50%" class="center">
-                      <img
-                        src="./asset/TranQuangKhanh.jpg"
-                        alt="Speaker 3"
-                        class="speaker-img"
-                      />
+                      <div class="speaker-img-wrapper">
+                        <img
+                          src="./asset/TranQuangKhanh.jpg"
+                          alt="Speaker 3"
+                          class="speaker-img"
+                        />
+                      </div>
                       <p class="speaker-info" style="font-weight: 600">
                         BÁO CÁO VIÊN
                       </p>
                       <p class="speaker-info">BSCKII. TRẦN QUANG KHÁNH</p>
                     </td>
                     <td width="50%" class="center">
-                      <img
-                        src="./asset/TranKeToan.jpg"
-                        alt="Speaker 4"
-                        class="speaker-img"
-                      />
+                      <div class="speaker-img-wrapper">
+                        <img
+                          src="./asset/TranKeToan.jpg"
+                          alt="Speaker 4"
+                          class="speaker-img"
+                        />
+                      </div>
                       <p class="speaker-info" style="font-weight: 600">
                         BÁO CÁO VIÊN
                       </p>
@@ -607,8 +670,11 @@
                   ích/dịch vụ của chúng tôi. Nếu quý Cán Bộ Y Tế không muốn tiếp
                   tục nhận được thêm các e-mail trong tương lai, vui lòng huỷ bỏ
                   đăng ký
-                  <a target="_blank" href="https://myservier.vn/">tại đây</a>,
-                  và vui lòng không trả lời lại e-mail này. Vui lòng truy cập
+                  <a
+                    target="_blank"
+                    href="https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2Feservier.com%2Funsubscribe.html%3Fx%3Da62e%26co%3DkmHK%26m%3DhIJ%26mc%3DK%26s%3D67Dl%26u%3DQ%26z%3DtBevhyG%26&data=05%7C02%7Clien.phanluongquynh.part%40servier.com%7C05b3f79bedaa402a14cf08dd70220251%7Ccc0a4ff694544e4b881b85f448dee2e3%7C0%7C0%7C638790013559578478%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=0CaTdrRxrthzBoIufC3pPUf2r7kpenPKizmClb3eGFc%3D&reserved=0"
+                    >tại đây</a
+                  >, và vui lòng không trả lời lại e-mail này. Vui lòng truy cập
                   <a target="_blank" href="https://myservier.vn/">tại đây</a> để
                   tìm hiểu thêm về chính sách quyền riêng tư của chúng tôi.
                 </p>
