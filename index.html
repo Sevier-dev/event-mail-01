@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Email Mời hội thảo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <style>
       * {
         margin: 0;
@@ -74,6 +80,12 @@
         margin: 20px 0;
         color: #003087;
       }
+      .speaker-container {
+        background-color: #f4f7fc;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+      }
+
       .speaker-img {
         width: 150px;
         height: 150px;
@@ -143,6 +155,7 @@
         background-color: #f4f7fc;
         border-radius: 8px;
         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+        font-family: "Montserrat", sans-serif;
       }
 
       .agenda-table td {
@@ -157,6 +170,7 @@
         width: 120px;
         border-right: 2px solid #003087;
         padding-right: 12px;
+        font-family: "Montserrat", sans-serif;
       }
 
       .agenda-desc {
@@ -168,19 +182,22 @@
       }
 
       .agenda-title {
-        font-weight: bold;
+        font-weight: 700;
         font-size: 16px;
         color: #003087;
+        font-family: "Montserrat", sans-serif;
       }
 
       .agenda-speaker {
-        font-weight: bold;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700;
         font-size: 14px;
       }
 
       .agenda-role {
         font-size: 14px;
         font-weight: normal;
+        font-weight: 400;
       }
       .footer {
         padding: 20px;
@@ -487,7 +504,7 @@
               </td>
             </tr>
             <tr style="margin-bottom: 30px">
-              <td class="agenda-container">
+              <td class="speaker-container">
                 <!-- <h2 class="section-title">CHỦ TỌA ĐOÀN VÀ BÁO CÁO VIÊN</h2> -->
                 <h3
                   class="program-tab"
@@ -660,12 +677,14 @@
               </td>
             </tr>
             <tr>
-              <td>
+              <td
+                style="background: linear-gradient(to bottom, #0051a3, #002569)"
+              >
                 <img
-                  src="https://i.imgur.com/Zx2R2rT.png"
+                  src="./asset/Doantau2.png"
                   alt="banner bottom"
                   width="100%"
-                  height="300"
+                  height="400"
                 />
               </td>
             </tr>
