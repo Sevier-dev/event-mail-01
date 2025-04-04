@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Email Mời hội thảo</title>
+    <title>Email Mời Hội Thảo</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -11,20 +11,32 @@
       rel="stylesheet"
     />
     <style>
+      table,
+      td {
+        mso-table-lspace: 0pt !important;
+        mso-table-rspace: 0pt !important;
+      }
+
+      img {
+        -ms-interpolation-mode: bicubic;
+      }
+
+      a {
+        text-decoration: none;
+      }
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
       }
+
       body {
-        margin: 0;
-        padding: 0;
         font-family: Arial, Helvetica, sans-serif;
         background-color: #ffffff;
-        max-width: 1200px;
+        width: 995px;
         margin: 0 auto;
-        box-sizing: border-box;
       }
+
       .center {
         text-align: center;
       }
@@ -32,38 +44,67 @@
         display: block;
         margin: 0 auto;
       }
+
       .header-section {
         background-color: #003087;
         padding: 20px;
         text-align: center;
         color: #ffffff;
       }
+
       .header-section h1 {
         font-size: 24px;
         margin: 10px 0;
         line-height: 1.4;
         text-transform: uppercase;
       }
-      .header-section p {
-        margin: 0;
-      }
+
       .time-block {
         color: #fff;
         font-weight: 600;
-        margin: 0px auto;
+        margin: 0 auto;
       }
+
       .time-block p {
         font-size: 24px;
         margin: 0;
       }
+
       .time-cell {
         padding: 5px;
         text-align: center;
       }
-      .border-x {
-        /* border-left: 1px solid #fff;
-        border-right: 1px solid #fff; */
+
+      .invite-section {
+        padding: 40px 20px 20px 40px;
+        text-align: center;
+        font-family: "Montserrat", sans-serif;
+        color: #003087;
       }
+
+      .invite-heading {
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+
+      .invite-highlight {
+        display: inline-block;
+        background: linear-gradient(to right, #0056b3, #001844);
+        color: white;
+        padding: 8px 16px;
+        border-radius: 8px;
+        font-size: 28px;
+        font-weight: 500;
+        margin-bottom: 10px;
+      }
+
+      .invite-title {
+        font-size: 28px;
+        font-weight: 700;
+        color: #003087;
+        margin: 10px 0;
+      }
+
       .location-text {
         font-size: 20px !important;
         margin: 10px 0;
@@ -71,141 +112,23 @@
         color: #fff;
         font-weight: 500;
       }
+
       .section {
         padding: 20px;
       }
+
       .paragraph {
         font-size: 24px;
-        color: #333333;
-        margin: 20px 0;
         color: #003087;
-      }
-      .speaker-container {
-        background-color: #f4f7fc;
-        border-radius: 8px;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-      }
-
-      .speaker-img {
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        object-fit: cover;
-        display: block;
-      }
-
-      .speaker-img-wrapper {
-        display: inline-block;
-        padding: 3px;
-        background: linear-gradient(180deg, #fc466b 0%, #3f5efb 100%);
-        border-radius: 50%;
-        width: 156px;
-        height: 156px;
-        box-sizing: border-box;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
-      }
-      .speaker-info {
-        font-size: 16px;
-        margin: 5px 0;
-        color: #003087;
-      }
-      .section-title {
-        font-size: 24px;
-        color: #003087;
-        text-align: center;
         margin: 20px 0;
       }
 
-      .main-speaker-wrapper {
-        display: flex;
-        align-items: center;
-        font-family: Arial, sans-serif;
-        margin: 24px auto;
-        max-width: 70%;
-        border-radius: 4px;
-        overflow: hidden;
-        font-size: 14px;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-      }
-
-      .main-speaker-label {
-        background-color: #003087;
-        color: #fff;
-        font-weight: bold;
-        padding: 8px 16px;
-        white-space: nowrap;
-        clip-path: polygon(0% 0, 90% 0, 100% 100%, 10% 100%);
-      }
-
-      .main-speaker-names {
-        background-color: #f4f7fc;
-        color: #003087;
-        padding: 8px 16px;
-        font-weight: bold;
-        flex: 1;
-      }
-
-      .agenda-table {
-        font-size: 14px;
-        width: 80%;
-        margin: 0 auto;
-      }
-
-      .agenda-container {
-        background-color: #f4f7fc;
-        border-radius: 8px;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-        font-family: "Montserrat", sans-serif;
-      }
-
-      .agenda-table td {
-        padding: 12px 4px;
-        vertical-align: top;
-      }
-
-      .agenda-time {
-        font-weight: bold;
-        color: #003087;
-        white-space: nowrap;
-        width: 120px;
-        border-right: 2px solid #003087;
-        padding-right: 12px;
-        font-family: "Montserrat", sans-serif;
-      }
-
-      .agenda-desc {
-        padding-left: 20px !important;
-      }
-
-      .agenda-desc p {
-        margin: 0 0 5px 0;
-      }
-
-      .agenda-title {
-        font-weight: 700;
-        font-size: 16px;
-        color: #003087;
-        font-family: "Montserrat", sans-serif;
-      }
-
-      .agenda-speaker {
-        font-family: "Montserrat", sans-serif;
-        font-weight: 700;
-        font-size: 14px;
-      }
-
-      .agenda-role {
-        font-size: 14px;
-        font-weight: normal;
-        font-weight: 400;
-      }
       .footer {
         padding: 20px;
         font-size: 14px;
         color: #333;
         font-family: Arial, sans-serif;
         line-height: 1.6;
-        position: relative;
       }
 
       .footer a {
@@ -226,19 +149,7 @@
         color: #333;
         margin-top: 10px;
       }
-      .program-tab {
-        background: linear-gradient(to bottom, #0063c6, #003087);
-        color: white;
-        padding: 10px 30px;
-        font-size: 20px;
-        font-weight: bold;
-        border-radius: 20px 20px 0px 0px;
-        text-align: center;
-        position: relative;
-        text-transform: uppercase;
-        margin: 0px auto;
-        margin-bottom: 20px;
-      }
+
       .gold-box {
         background: linear-gradient(to bottom right, #f6c244, #b8860b);
         color: white;
@@ -256,7 +167,8 @@
   </head>
   <body>
     <table width="100%" cellpadding="0" cellspacing="0">
-      <tr class="" style="max-width: 1200px">
+      <!-- Header with logo and notice -->
+      <tr>
         <td>
           <table width="100%" style="margin: 10px 0 20px 0">
             <tr>
@@ -265,28 +177,27 @@
                   src="https://sevier-dev.github.io/event-mail-01/asset/MyServier_Logo-1.svg"
                   width="200"
                   height="50"
+                  alt="MyServier Logo"
                 />
               </td>
-
-              <td style="width: 50%;  text-align: right;">
+              <td style="width: 50%; text-align: right">
                 <p
                   style="
-                    font-size: 14px !important;
+                    font-size: 14px;
                     color: #58595b;
-                    font-style: italic !important;
-                   width: 100%;
-                    text-align: right;
+                    font-style: italic;
                     margin: 0;
                   "
                 >
-                Nội dung chỉ dành cho cán bộ y tế. Vui lòng không chuyển tiếp
-                nội dung này. </br> Nếu không xem được email này. Vui lòng xem
-                <a
-                  href="https://sevier-dev.github.io/event-mail-01/"
-                  target="_blank"
-                  style="text-decoration: underline; cursor: pointer"
-                  >tại đây</a
-                >
+                  Nội dung chỉ dành cho cán bộ y tế. Vui lòng không chuyển tiếp
+                  nội dung này.<br />
+                  Nếu không xem được email này. Vui lòng xem
+                  <a
+                    href="https://sevier-dev.github.io/event-mail-01/"
+                    target="_blank"
+                    style="text-decoration: underline"
+                    >tại đây</a
+                  >
                 </p>
               </td>
             </tr>
@@ -294,29 +205,31 @@
         </td>
       </tr>
 
+      <!-- Main Banner Section -->
       <tr
         style="
-          background-image: url('https://sevier-dev.github.io/event-mail-01/asset/background.jpg');
-          background-size: cover;
-          background-repeat: no-repeat;
+          background: linear-gradient(to right, #0056b3, #001844);
+          background-image: url('https://sevier-dev.github.io/event-mail-01/asset/background3.jpg');
           background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
         "
       >
         <td>
           <table>
             <tr>
-              <td style="text-align: center">
+              <td class="center">
                 <table
                   width="550"
                   cellpadding="0"
                   cellspacing="0"
-                  style="margin: 0 0 0 auto; padding: 20px 0"
+                  style="margin: 0 0 0 auto; padding: 20px 0 0 0"
                 >
                   <tr>
                     <td>
                       <img
                         src="https://sevier-dev.github.io/event-mail-01/asset/logoVSH.png"
-                        alt="Servier logo"
+                        alt="VSH Logo"
                         width="120"
                         height="120"
                       />
@@ -324,7 +237,7 @@
                     <td>
                       <img
                         src="https://sevier-dev.github.io/event-mail-01/asset/logoBenhVienGiaLai.png"
-                        alt="Servier logo"
+                        alt="Gia Lai Hospital Logo"
                         width="120"
                         height="120"
                       />
@@ -332,31 +245,27 @@
                     <td>
                       <img
                         src="https://sevier-dev.github.io/event-mail-01/asset/servierLogo.png"
-                        alt="Servier logo"
+                        alt="Servier Logo"
                         width="200"
-                        height="80"
                       />
                     </td>
                   </tr>
                 </table>
               </td>
             </tr>
-
             <tr>
               <td class="center">
                 <img
                   src="https://sevier-dev.github.io/event-mail-01/asset/bannerTop.png"
-                  alt="Header Image"
+                  alt="Header Banner"
                   width="100%"
                   height="200"
                   class="img-block"
                   style="margin-bottom: 10px"
                 />
-
                 <table>
                   <tr>
-                    <td width="5%" />
-
+                    <td width="5%"></td>
                     <td width="40%">
                       <table
                         width="100%"
@@ -382,7 +291,7 @@
                             ></p>
                             <p>Thứ 6</p>
                           </td>
-                          <td class="time-cell border-x" style="width: 25%">
+                          <td class="time-cell" style="width: 25%">
                             <div class="gold-box">25</div>
                           </td>
                           <td class="time-cell" style="width: 37.5%">
@@ -403,9 +312,7 @@
                         </tr>
                       </table>
                     </td>
-
-                    <td width="5%" />
-
+                    <td width="5%"></td>
                     <td
                       width="45%"
                       style="vertical-align: bottom; padding-left: 20px"
@@ -421,13 +328,12 @@
                         <tr>
                           <td class="time-cell" style="width: 10%">
                             <img
-                              src="https://sevier-dev.github.io/event-mail-01/asset//locationIcon.png"
+                              src="https://sevier-dev.github.io/event-mail-01/asset/locationIcon.png"
                               alt="Location Icon"
                               width="30"
                               height="30"
                             />
                           </td>
-
                           <td style="width: 80%">
                             <p
                               class="location-text"
@@ -437,7 +343,7 @@
                             </p>
                             <p
                               class="location-text"
-                              style="padding-bottom: 15px"
+                              style="padding-bottom: 5px"
                             >
                               132 Tôn Thất Tùng, Phường Đông, Pleiku, Gia Lai
                             </p>
@@ -453,239 +359,81 @@
         </td>
       </tr>
 
+      <!-- Invite Section -->
+      <tr>
+        <td class="invite-section">
+          <p class="invite-heading">Kính mời Quý Bác sĩ/Dược sĩ đến tham dự</p>
+          <div class="invite-highlight">
+            Hội thảo khoa học <strong>Hypertour</strong> với chủ đề
+          </div>
+          <p class="invite-title">CẬP NHẬT HƯỚNG DẪN THỰC HÀNH LÂM SÀNG</p>
+          <p class="invite-title">QUẢN LÝ TĂNG HUYẾT ÁP 5Đ TỪ VSH/VNHA 2024</p>
+        </td>
+      </tr>
+
+      <!-- Content Section -->
+      <tr>
+        <td class="section">
+          <table width="100%">
+            <tr>
+              <td width="70%" style="text-align: left; padding: 10px">
+                <p class="paragraph">
+                  Cám ơn Quý Bác sĩ/Dược sĩ đã đăng ký tham gia hội thảo.
+                </p>
+                <p class="paragraph" style="font-weight: 600">
+                  Để chương trình đáp ứng và sát với nhu cầu thực tế của Quý Bác
+                  sĩ/Dược sĩ, trân trọng kính mời Quý Bác sĩ/Dược sĩ tham gia
+                  khảo sát về nội dung hội thảo và trải nghiệm hành trình 5Đ.
+                </p>
+                <a
+                  href="https://hypertour.knyk.vn/gialai/"
+                  target="_blank"
+                  style="
+                    display: inline-block;
+                    background: linear-gradient(
+                      to bottom,
+                      #6da7ff,
+                      #1d65d2,
+                      #002e89
+                    );
+                    color: #ffffff;
+                    padding: 24px 40px;
+                    border-radius: 40px;
+                    font-weight: bold;
+                    font-size: 24px;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+                    font-family: Arial, sans-serif;
+                  "
+                >
+                  Nhấn vào đây để khảo sát và xem nội dung hội thảo
+                </a>
+              </td>
+              <td width="30%">
+                <img
+                  src="https://i.imgur.com/0y0JfMm.png"
+                  alt="QR Code"
+                  style="width: 300px"
+                />
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+      <!-- Footer Section -->
       <tr>
         <td>
           <table width="100%" cellpadding="0" cellspacing="0">
             <tr>
-              <td class="section">
-                <table width="100%">
-                  <tr>
-                    <td style="text-align: left; padding: 10px">
-                      <p class="paragraph">
-                        Cám ơn Quý Bác sĩ/ Dược sĩ đã đăng ký tham gia hội thảo.
-                      </p>
-                      <p class="paragraph" style="font-weight: 600">
-                        Để chương trình đáp ứng và sát với nhu cầu thực tế của
-                        Quý Bác sĩ/Dược sĩ, trân trọng kính mời Quý Bác sĩ/Dược
-                        sĩ tham gia khảo sát về nội dung hội thảo và trải nghiệm
-                        hành trình 5Đ.
-                      </p>
-                      <a
-                        href="https://hypertour.knyk.vn/gialai/"
-                        target="_blank"
-                        style="
-                          display: inline-block;
-                          background: linear-gradient(
-                            to bottom,
-                            #6da7ff,
-                            #1d65d2,
-                            #002e89
-                          );
-                          color: #ffffff;
-                          padding: 24px 100px;
-                          border-radius: 40px;
-                          font-weight: bold;
-                          font-size: 24px;
-                          text-decoration: none;
-                          text-transform: uppercase;
-                          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
-                          font-family: Arial, sans-serif;
-                        "
-                      >
-                        Nhấn vào đây để thực hiện khảo sát
-                      </a>
-                    </td>
-                    <td style="text-align: right; padding: 10px">
-                      <img
-                        src="https://i.imgur.com/0y0JfMm.png"
-                        alt="QR Code"
-                        style="max-width: 300px"
-                      />
-                    </td>
-                  </tr>
-                </table>
-              </td>
-            </tr>
-            <tr style="margin-bottom: 30px">
-              <td class="speaker-container">
-                <!-- <h2 class="section-title">CHỦ TỌA ĐOÀN VÀ BÁO CÁO VIÊN</h2> -->
-                <h3
-                  class="program-tab"
-                  style="
-                    border-top-left-radius: 40px;
-                    border-top-right-radius: 40px;
-                  "
-                >
-                  CHỦ TỌA ĐOÀN VÀ BÁO CÁO VIÊN
-                </h3>
-                <table width="800px" style="margin: 30px auto">
-                  <tr>
-                    <td width="50%" class="center" style="padding-bottom: 20px">
-                      <div class="speaker-img-wrapper">
-                        <img
-                          src="https://sevier-dev.github.io/event-mail-01/asset/NguyenDangBao.jpg"
-                          alt="Speaker 1"
-                          class="speaker-img"
-                        />
-                      </div>
-                      <p class="speaker-info" style="font-weight: 600">
-                        CHỦ TỌA
-                      </p>
-                      <p class="speaker-info">TS. BS. NGUYỄN ĐĂNG BẢO</p>
-                    </td>
-                    <td width="50%" class="center" style="padding-bottom: 20px">
-                      <div class="speaker-img-wrapper">
-                        <img
-                          src="https://sevier-dev.github.io/event-mail-01/asset/LyVanChieu.jpg"
-                          alt="Speaker 2"
-                          class="speaker-img"
-                        />
-                      </div>
-                      <p class="speaker-info" style="font-weight: 600">
-                        CHỦ TỌA
-                      </p>
-                      <p class="speaker-info">THS. BSCKII. LÝ VĂN CHIÊU</p>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td width="50%" class="center">
-                      <div class="speaker-img-wrapper">
-                        <img
-                          src="https://sevier-dev.github.io/event-mail-01/asset/TranQuangKhanh.jpg"
-                          alt="Speaker 3"
-                          class="speaker-img"
-                        />
-                      </div>
-                      <p class="speaker-info" style="font-weight: 600">
-                        BÁO CÁO VIÊN
-                      </p>
-                      <p class="speaker-info">BSCKII. TRẦN QUANG KHÁNH</p>
-                    </td>
-                    <td width="50%" class="center">
-                      <div class="speaker-img-wrapper">
-                        <img
-                          src="https://sevier-dev.github.io/event-mail-01/asset/TranKeToan.jpg"
-                          alt="Speaker 4"
-                          class="speaker-img"
-                        />
-                      </div>
-                      <p class="speaker-info" style="font-weight: 600">
-                        BÁO CÁO VIÊN
-                      </p>
-                      <p class="speaker-info">BSCKII. TRẦN KẾ TOÁN</p>
-                    </td>
-                  </tr>
-                </table>
-              </td>
-            </tr>
-
-            <tr>
-              <td>
-                <div style="height: 50px"></div>
-              </td>
-            </tr>
-
-            <tr>
-              <td class="agenda-container">
-                <h3 class="program-tab">CHƯƠNG TRÌNH</h3>
-                <table
-                  class="agenda-table"
-                  border="0"
-                  cellpadding="0"
-                  cellspacing="0"
-                >
-                  <tr>
-                    <td class="agenda-time"><strong>13:15 – 13:55</strong></td>
-                    <td class="agenda-desc">
-                      <p class="agenda-title">
-                        Trải nghiệm hành trình 5Đ tại Booth
-                      </p>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td class="agenda-time"><strong>13:55 – 14:00</strong></td>
-                    <td class="agenda-desc">
-                      <p class="agenda-title">Khai mạc</p>
-                      <p class="agenda-speaker">TS. BS. ĐẶNG NGUYÊN BẢO</p>
-                      <p class="agenda-role">
-                        Giám Đốc Bệnh viện Đa khoa Tỉnh Gia Lai
-                      </p>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td class="agenda-time"><strong>14:00 – 14:45</strong></td>
-                    <td class="agenda-desc">
-                      <p class="agenda-title">
-                        Cập nhật chiến lược 5Đ thực hành lâm sàng quản lý Tăng
-                        huyết áp VSH/VNHA 2024
-                      </p>
-                      <p class="agenda-speaker">THS. BSCKII. LÝ VĂN CHIÊU</p>
-                      <p class="agenda-role">
-                        Giám Đốc Trung tâm Tim mạch Chợ Rẫy
-                      </p>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td class="agenda-time"><strong>14:45 – 15:00</strong></td>
-                    <td class="agenda-desc">
-                      <p class="agenda-title">Thảo luận</p>
-                      <p class="agenda-role">Chủ tọa đoàn</p>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td class="agenda-time"><strong>15:00 – 16:30</strong></td>
-                    <td class="agenda-desc">
-                      <p class="agenda-title" style="padding-bottom: 10px">
-                        Ứng dụng chiến lược 5Đ thực hành lâm sàng quản lý Tăng
-                        huyết áp
-                      </p>
-
-                      <p class="agenda-title">
-                        Trường hợp bệnh nhân Tăng huyết áp mới chẩn đoán
-                      </p>
-                      <p class="agenda-speaker">BSCKII. TRẦN QUANG KHÁNH</p>
-                      <p class="agenda-role" style="padding-bottom: 10px">
-                        Trung tâm Tim mạch Chợ Rẫy
-                      </p>
-
-                      <p class="agenda-title">
-                        Trường hợp bệnh nhân Tăng huyết áp chưa kiểm soát với
-                        phối hợp 2 thuốc
-                      </p>
-                      <p class="agenda-speaker">BSCKII. TRẦN KẾ TOÁN</p>
-                      <p class="agenda-role" style="padding-bottom: 10px">
-                        Trưởng khoa Tim mạch Bệnh viện Đa khoa tỉnh Gia Lai
-                      </p>
-
-                      <p class="agenda-title">Bàn luận và thảo luận</p>
-                      <p class="agenda-role">Chủ tọa đoàn</p>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td class="agenda-time"><strong>16:30 – 16:45</strong></td>
-                    <td class="agenda-desc">
-                      <p class="agenda-title">Tổng kết</p>
-                      <p class="agenda-speaker">THS. BSCKII. LÝ VĂN CHIÊU</p>
-                      <p class="agenda-role">
-                        Giám Đốc Trung tâm Tim mạch Chợ Rẫy
-                      </p>
-                    </td>
-                  </tr>
-                </table>
-              </td>
-            </tr>
-            <tr>
               <td
+                bgcolor="#003087"
                 style="background: linear-gradient(to bottom, #0051a3, #002569)"
               >
                 <img
                   src="https://sevier-dev.github.io/event-mail-01/asset/Doantau2.png"
-                  alt="banner bottom"
+                  alt="Banner Bottom"
                   width="100%"
                   height="400"
                 />
@@ -716,7 +464,6 @@
                         alt="Servier Logo"
                         class="footer-logo"
                         width="220"
-                      
                       />
                     </td>
                     <td width="50%">
